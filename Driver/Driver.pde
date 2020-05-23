@@ -2,6 +2,7 @@ import java.util.*; // for ArrayList and list
 import java.io.*; // for Calendar
 
 Map Map = new Map();
+MouseManager MManage = new MouseManager();
 
 void setup(){
    //size(1960, 1000, P2D); // P2D uses OpenGL's faster rendering system
@@ -14,4 +15,10 @@ void setup(){
 
 void draw(){
   Map.drawMap();
+}
+
+void mousePressed(){
+    if(mouseButton == 37){ // Left click
+        MManage.leftClick();
+    }
 }
