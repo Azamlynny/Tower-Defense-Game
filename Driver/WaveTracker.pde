@@ -1,0 +1,7 @@
+class WaveTracker {
+  
+  public WaveTracker(){
+
+  }
+  
+}

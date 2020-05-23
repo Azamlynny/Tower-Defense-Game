@@ -3,6 +3,8 @@ import java.io.*; // for Calendar
 
 Map Map = new Map();
 MouseManager MManage = new MouseManager();
+GameTracker Game = new GameTracker();
+GUI gui = new GUI();
 
 void setup(){
    //size(1960, 1000, P2D); // P2D uses OpenGL's faster rendering system
@@ -15,10 +17,13 @@ void setup(){
 
 void draw(){
   Map.drawMap();
+  Game.gameTick();
+  
+  gui.drawGUI(Game);
 }
 
 void mousePressed(){
     if(mouseButton == 37){ // Left click
-        MManage.leftClick();
+        MManage.leftClick(Map);
     }
 }

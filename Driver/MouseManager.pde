@@ -4,7 +4,7 @@ class MouseManager {
 
   }
   
-  void leftClick(){
+  void leftClick(Map Map){
     
   }
        
