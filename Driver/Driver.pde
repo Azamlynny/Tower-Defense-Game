@@ -17,7 +17,7 @@ void setup(){
 
 void draw(){
   Map.drawMap();
-  Game.gameTick();
+  Game.gameTick(Map);
   
   gui.drawGUI(Game);
 }

@@ -22,6 +22,7 @@ class Enemy {
   }
   
   void drawEnemy(){
+    fill(0);
     rect(xPos, yPos, enemySize, enemySize); 
   }
   
