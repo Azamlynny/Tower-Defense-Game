@@ -21,7 +21,7 @@ class GameTracker {
     long timeEnd = System.currentTimeMillis();
     time = TimeUnit.MILLISECONDS.toSeconds(timeEnd - timeStart); // Update the game's time counter in seconds
     
-    WTracker.checkWaveSpawn(this); // Constantly checks to see if a new wave should be spawned
+    WTracker.checkWaveSpawn(this, Map); // Constantly checks to see if a new wave should be spawned
     WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over time
     
     for(int i = 0; i < enemyList.size(); i++){
