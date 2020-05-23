@@ -6,6 +6,7 @@ class Map {
   int xTiles = mapWidth/tileWidth;
   int yTiles = mapHeight/tileWidth;
   Tile[][] tiles = new Tile[xTiles][yTiles];
+  int endOfPath;
 
   public Map() {
     createEnemyPath();
@@ -34,6 +35,8 @@ class Map {
   
   void createEnemyPath(){
     int counter = 0;
+    
+    // Create a path for enemies to traverse
     counter = addPath(3,0,counter);
     counter = addPath(3,1,counter);
     counter = addPath(3,2,counter);
@@ -103,8 +106,9 @@ class Map {
     counter = addPath(21,2,counter);
     counter = addPath(22,2,counter);
     counter = addPath(23,2,counter);
-
-    for(int y = 0; y < tiles[0].length; y++){
+    this.endOfPath = counter; // Save the end of the enemy path for pathfinding purposes
+    
+    for(int y = 0; y < tiles[0].length; y++){ // Fills the rest of the unfilled tiles with empty tiles
       for(int x = 0; x < tiles.length; x++){
         if(tiles[x][y] == null){
           tiles[x][y] = new Tile(this, counter, x, y);
@@ -114,7 +118,7 @@ class Map {
     }
   }
   
-  int addPath(int x, int y, int counter){
+  int addPath(int x, int y, int counter){ // Make a tile on x,y in tiles[][] a path tile
     tiles[x][y] = new Path(this, counter, x, y);
     counter++;
     return counter;
