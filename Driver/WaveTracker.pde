@@ -13,10 +13,16 @@ class WaveTracker {
   
   void checkWaveSpawn(GameTracker Game){
     // TODO: ADD CHECK TO MAKE SURE NO MORE ENEMIES NEED TO SPAWN
-    if(Game.enemyList.size() == 0 && Game.time >= 5){
+    //if(Game.enemyList.size() == 0 && Game.time >= 5){
+    //  beginNewWave(Game);
+    //}
+    
+    // Wave 1 
+    if(Game.time == 5){
       beginNewWave(Game);
     }
     
+    // Wave 2
     if(Game.time == 30){
       beginNewWave(Game);
     }
@@ -24,6 +30,7 @@ class WaveTracker {
   }
   
   void beginNewWave(GameTracker Game){
+     System.out.println("Spawning a new wave");
      wave++;
      spawning = true;
      timeSinceLastSpawn = System.currentTimeMillis();
@@ -35,21 +42,42 @@ class WaveTracker {
       if(wave == 1){
         spawnWave1(Game);
       }
-      
+      if(wave == 2){
+        spawnWave2(Game);
+      }
+      if(wave == 3){
+        spawnWave3(Game);
+      }
+      if(wave == 4){
+        spawnWave4(Game);
+      }
+      if(wave == 5){
+        spawnWave5(Game);
+      }
+      if(wave == 6){
+        spawnWave6(Game);
+      }
+      if(wave == 7){
+        spawnWave7(Game);
+      }
+      if(wave == 8){
+        spawnWave8(Game);
+      }
+      if(wave == 9){
+        spawnWave9(Game);
+      }
+      if(wave == 10){
+        spawnWave10(Game);
+      }
     }
-  }
-      
-      // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  
-  void spawnWave1(GameTracker Game){
-    spacing = 1000;
-    
   }
   
   void dequeueSpawnWave(GameTracker Game){
     if(enemyQueue.size() > 0){
       long currentTime = System.currentTimeMillis();
-      if(currentTime - timeSinceLastSpawn >= spacing){
+      long timeElapsed = currentTime - timeSinceLastSpawn;
+      System.out.println(timeElapsed);
+      if(timeElapsed >= spacing){
         timeSinceLastSpawn = System.currentTimeMillis();
         
         // Add a new enemy object to the enemies in game  
@@ -58,5 +86,58 @@ class WaveTracker {
         enemyQueue.remove(0);
       }
     }
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave1(GameTracker Game){
+    spacing = 1000;
+    for(int i = 0; i < 10; i++){
+      enemyQueue.add(new Enemy(1, 10, 0, 1, i * 50, i * 50, 50));
+    }
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave2(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave3(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave4(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave5(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave6(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave7(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave8(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave9(GameTracker Game){
+    spacing = 1000;
+  }
+  
+  // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
+  void spawnWave10(GameTracker Game){
+    spacing = 1000;
   }
 }

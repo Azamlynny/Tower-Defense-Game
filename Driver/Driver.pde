@@ -19,6 +19,7 @@ void draw(){
   Map.drawMap();
   Game.gameTick(Map);
   
+  //System.out.println(Game.enemyList.size());
   gui.drawGUI(Game);
 }
 
