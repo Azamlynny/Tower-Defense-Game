@@ -12,21 +12,18 @@ class WaveTracker {
   }
   
   void checkWaveSpawn(GameTracker Game, Map Map){
-    // TODO: ADD CHECK TO MAKE SURE NO MORE ENEMIES NEED TO SPAWN
-    //if(Game.enemyList.size() == 0 && Game.time >= 5){
-    //  beginNewWave(Game);
-    //}
-    
-    // Wave 1 
-    if(Game.time == 5){
-      beginNewWave(Game, Map);
+    if(spawning == false){
+      
+      // Wave 1 
+      if(Game.time == 5){
+        beginNewWave(Game, Map);
+      }
+      
+      // Wave 2
+      if(Game.time == 30){
+        beginNewWave(Game, Map);
+      }
     }
-    
-    // Wave 2
-    if(Game.time == 30){
-      beginNewWave(Game, Map);
-    }
-    
   }
   
   void beginNewWave(GameTracker Game, Map Map){
@@ -76,7 +73,7 @@ class WaveTracker {
     if(enemyQueue.size() > 0){
       long currentTime = System.currentTimeMillis();
       long timeElapsed = currentTime - timeSinceLastSpawn;
-      System.out.println(timeElapsed);
+      System.out.println(timeElapsed + " " + spacing);
       if(timeElapsed >= spacing){
         timeSinceLastSpawn = System.currentTimeMillis();
         
@@ -92,13 +89,13 @@ class WaveTracker {
   void spawnWave1(GameTracker Game, Map Map){
     spacing = 1000;
     for(int i = 0; i < 10; i++){
-      enemyQueue.add(new Enemy(1, 100, 0, 1, 50, Map));
+      enemyQueue.add(new Enemy(1, 15, 0, 1, 50, Map));
     }
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
   void spawnWave2(GameTracker Game){
-    spacing = 1000;
+    spacing = 100;
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
