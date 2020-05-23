@@ -1,0 +1,7 @@
+class GameTracker {
+
+  public GameTracker() {
+
+  }
+  
+}

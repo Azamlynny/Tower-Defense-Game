@@ -1,0 +1,7 @@
+class Tower {
+
+  public Tower(){
+
+  }
+  
+}
