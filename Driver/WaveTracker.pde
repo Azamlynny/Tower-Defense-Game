@@ -92,7 +92,7 @@ class WaveTracker {
   void spawnWave1(GameTracker Game, Map Map){
     spacing = 1000;
     for(int i = 0; i < 10; i++){
-      enemyQueue.add(new Enemy(1, 10, 0, 1, 50, Map));
+      enemyQueue.add(new Enemy(1, 100, 0, 1, 50, Map));
     }
   }
   

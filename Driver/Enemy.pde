@@ -19,13 +19,22 @@ class Enemy {
     goal = 1;
   }
   
-  void move(Map Map){
+  void move(Map Map, GameTracker Game){
     int goalX = Map.pathTiles[goal][0] * Map.tileWidth + Map.tileWidth/2;
     int goalY = Map.pathTiles[goal][1] * Map.tileWidth + Map.tileWidth/2;
     if(checkDistanceToGoal(goalX, goalY) <= 10){ // If the tile is reached, move to the next one
-      goal++;
-      this.move(Map); // Move again once the goal is reached so that the enemies do not stop and pause
+      if(goal == Map.endOfPath - 1){ // Check if the enemy is at the end of the path
+        // deal damage to the player's hearts and remove the enemy
+        Game.hearts -= damage;
+        Game.enemyList.remove(this);
+      }
+      else{
+        goal++;
+        this.move(Map, Game); // Move again once the goal is reached so that the enemies do not stop and pause
+      }
     }
+    
+    // Move towards the goal
     if(goalX > xPos){
       xPos += speed/10;
     }

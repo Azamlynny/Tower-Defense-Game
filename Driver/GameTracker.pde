@@ -25,7 +25,7 @@ class GameTracker {
     WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over time
     
     for(int i = 0; i < enemyList.size(); i++){
-      enemyList.get(i).move(Map); 
+      enemyList.get(i).move(Map, this); 
     }
     
     drawEntities(); // Draws enemies, towers, and projectiles
