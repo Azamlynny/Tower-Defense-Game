@@ -9,6 +9,7 @@ class GameTracker {
   long time;
   WaveTracker WTracker = new WaveTracker();
   ProjectileTracker PTracker = new ProjectileTracker();
+  TowerTracker TTracker = new TowerTracker();
   
   public GameTracker() {
     money = 500;
