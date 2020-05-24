@@ -53,7 +53,6 @@ class Tower {
   
   void fireProjectile(GameTracker Game){
     timeSinceLastFired = System.currentTimeMillis();
-    System.out.println("fired");
     int targetX = Target.xPos;
     int targetY = Target.yPos;
     double distanceToTarget = Math.pow(checkDistance(targetX, targetY),0.5);
@@ -61,7 +60,6 @@ class Tower {
     float xVel = (Target.xPos - xPos) / timeToTarget;
     float yVel = (Target.yPos - yPos) / timeToTarget;
     Game.PTracker.projectileList.add(new Projectile(this.xPos, this.yPos, xVel, yVel, damage, projectileSize));
-    System.out.println("Spawned a projectile");
   }
   
   void findNewTarget(GameTracker Game){ // Targets the enemy which is the farthest down the path and closest to the end
