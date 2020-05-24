@@ -73,7 +73,7 @@ class WaveTracker {
     if(enemyQueue.size() > 0){
       long currentTime = System.currentTimeMillis();
       long timeElapsed = currentTime - timeSinceLastSpawn;
-      System.out.println(timeElapsed + " " + spacing);
+      //System.out.println(timeElapsed + " " + spacing);
       if(timeElapsed >= spacing){
         timeSinceLastSpawn = System.currentTimeMillis();
         
@@ -89,7 +89,7 @@ class WaveTracker {
   void spawnWave1(GameTracker Game, Map Map){
     spacing = 1000;
     for(int i = 0; i < 10; i++){
-      enemyQueue.add(new Enemy(1, 15, 0, 1, 50, Map));
+      enemyQueue.add(new Enemy(1, 50, 0, 1, 50, Map));
     }
   }
   

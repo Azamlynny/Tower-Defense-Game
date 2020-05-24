@@ -43,7 +43,6 @@ class Map {
     }
     
     this.endOfPath = counter; // Save the end of the enemy path for pathfinding purposes
-    print(endOfPath);
     
     for(int y = 0; y < tiles[0].length; y++){ // Fills the rest of the unfilled tiles with empty tiles
       for(int x = 0; x < tiles.length; x++){
