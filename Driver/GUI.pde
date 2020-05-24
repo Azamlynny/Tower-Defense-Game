@@ -26,6 +26,26 @@ class GUI {
     fill(255, 50, 50);
     text("Hearts: " + Game.hearts, 70, 1030);
     
+    // Draw time until next wave
+    fill(255);
+    textSize(38);
+    textAlign(CENTER);
+    text("Next Wave", 610, 930);
+    
+    // Draw progress bar to next wave
+    fill(212);
+    rect(610, 1000, 300, 100);
+    if(Game.WTracker.wave > 0){
+      int waveDuration = Game.WTracker.waveTimes[Game.WTracker.wave] - Game.WTracker.waveTimes[Game.WTracker.wave - 1]; // Time between the two waves
+      int timeUntilNextWave = Game.WTracker.waveTimes[Game.WTracker.wave] - (int) Game.time; // Difference between next wave and current time
+      System.out.println(timeUntilNextWave/waveDuration);
+      fill(255, 56, 56);
+      rectMode(CORNER);
+      rect(460, 950, (int) (300 * ((float)timeUntilNextWave / (float) waveDuration)), 100);
+    }
+    
+    rectMode(CENTER);
+    
     // Draw Tower backplates
     fill(212);
     rect(900, 960, 100, 100);

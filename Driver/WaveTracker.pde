@@ -5,7 +5,8 @@ class WaveTracker {
   long timeSinceLastSpawn; 
   int spacing; // Spacing between enemy spawns
   List<Enemy> enemyQueue = new ArrayList<Enemy>();
-
+  int[] waveTimes = {5, 30, 60, 100, 140, 180, 230, 290, 360, 420};
+  
   public WaveTracker(){
     wave = 0;
     spawning = false;
@@ -14,15 +15,12 @@ class WaveTracker {
   void checkWaveSpawn(GameTracker Game, Map Map){
     if(spawning == false){
       
-      // Wave 1 
-      if(Game.time == 5){
-        beginNewWave(Game, Map);
+      for(int i = 0; i < 10; i++){
+        if(Game.time == waveTimes[i]){ // Check if a new wave should begin
+          beginNewWave(Game, Map); 
+        }
       }
       
-      // Wave 2
-      if(Game.time == 30){
-        beginNewWave(Game, Map);
-      }
     }
   }
   
