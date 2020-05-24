@@ -67,9 +67,9 @@ class Tower {
   void findNewTarget(GameTracker Game){ // Targets the enemy which is the farthest down the path and closest to the end
     Enemy tempTarget;
     int highestEnemyGoal = 0; // Used to determine which enemy is the farthest ahead to target the first enemy
-    for(int i = 0; i < Game.enemyList.size(); i++){
-      if(checkDistance(Game.enemyList.get(i).xPos, Game.enemyList.get(i).yPos) <= Math.pow((range/2),2)){ // Check whether the target is within the tower's range
-        tempTarget = Game.enemyList.get(i);
+    for(int i = 0; i < Game.ETracker.enemyList.size(); i++){
+      if(checkDistance(Game.ETracker.enemyList.get(i).xPos, Game.ETracker.enemyList.get(i).yPos) <= Math.pow((range/2),2)){ // Check whether the target is within the tower's range
+        tempTarget = Game.ETracker.enemyList.get(i);
         if(tempTarget.goal > highestEnemyGoal){
           highestEnemyGoal = tempTarget.goal; // The enemy who has the greater tile goal is further down the path
           Target = tempTarget; 

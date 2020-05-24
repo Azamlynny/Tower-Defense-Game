@@ -4,12 +4,12 @@ class GameTracker {
 
   int money;
   int hearts;
-  List<Enemy> enemyList = new ArrayList<Enemy>();
   long timeStart;
   long time;
   WaveTracker WTracker = new WaveTracker();
   ProjectileTracker PTracker = new ProjectileTracker();
   TowerTracker TTracker = new TowerTracker();
+  EnemyTracker ETracker = new EnemyTracker();
   
   public GameTracker(Map Map) {
     money = 500;
@@ -30,22 +30,8 @@ class GameTracker {
     WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over time
     TTracker.runTowerActions(this);
     PTracker.runProjectileActions(this);
+    ETracker.runEnemyActions(this, Map);
     
-    for(int i = 0; i < enemyList.size(); i++){
-      enemyList.get(i).move(Map, this); 
-    }
-    
-    drawEntities(); // Draws enemies, towers, and projectiles
-  }
-  
-  void drawEntities(){
-    for(int i = 0; i < enemyList.size(); i++){
-      enemyList.get(i).drawEnemy(); 
-      
-      if(enemyList.get(i).health <= 0){ // discard dead enemies
-        enemyList.remove(i); 
-      }
-    }
   }
   
 }

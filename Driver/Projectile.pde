@@ -29,9 +29,9 @@ class Projectile {
   }
   
   void checkCollision(GameTracker Game){
-    for(int i = 0; i < Game.enemyList.size(); i++){
-      if(checkDistance(Game.enemyList.get(i).xPos, Game.enemyList.get(i).yPos) < collisionTolerance){
-        Game.enemyList.get(i).health -= this.damage; 
+    for(int i = 0; i < Game.ETracker.enemyList.size(); i++){
+      if(checkDistance(Game.ETracker.enemyList.get(i).xPos, Game.ETracker.enemyList.get(i).yPos) < collisionTolerance){
+        Game.ETracker.enemyList.get(i).health -= this.damage; 
         Game.PTracker.projectileList.remove(this); // Deletes the instance of the projectile after colliding with an enemy and dealing damage
       }
     }

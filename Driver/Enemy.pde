@@ -29,7 +29,7 @@ class Enemy {
         // deal damage to the player's hearts and remove the enemy
         Game.hearts -= damage;
         this.health = 0;
-        Game.enemyList.remove(this);
+        Game.ETracker.enemyList.remove(this);
       }
       else{
         goal++;

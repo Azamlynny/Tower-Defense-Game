@@ -78,7 +78,7 @@ class WaveTracker {
         timeSinceLastSpawn = System.currentTimeMillis();
         
         // Add a new enemy object to the enemies in game  
-        Game.enemyList.add(enemyQueue.get(0));
+        Game.ETracker.enemyList.add(enemyQueue.get(0));
         // Pop the first enemy off the enemy queue
         enemyQueue.remove(0);
       }
