@@ -41,9 +41,11 @@ class GUI {
       System.out.println(timeUntilNextWave/waveDuration);
       fill(255, 56, 56);
       rectMode(CORNER);
+      noStroke();
       rect(460, 950, (int) (300 * ((float)timeUntilNextWave / (float) waveDuration)), 100);
     }
     
+    strokeWeight(1);
     rectMode(CENTER);
     
     // Draw Tower backplates

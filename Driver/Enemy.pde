@@ -1,5 +1,6 @@
 class Enemy {
-  int health; 
+  int health;
+  int maxHealth;
   int speed;
   int armor;
   int damage;
@@ -11,6 +12,7 @@ class Enemy {
   
   public Enemy(int hp, int spd, int arm, int dmg, int enemyWidth, int moneyDrop, Map Map) {
     health = hp;
+    maxHealth = hp;
     speed = spd;
     armor = arm;
     damage = dmg;
@@ -55,6 +57,16 @@ class Enemy {
   void drawEnemy(){
     fill(0);
     rect(xPos, yPos, enemySize, enemySize); 
+    drawHealthBar();
+  }
+  
+  void drawHealthBar(){
+    fill(212);
+    rect(xPos, yPos - (enemySize/2) - 20, enemySize, 10);
+    fill(8, 230, 0);
+    rectMode(CORNER);
+    rect(xPos - enemySize / 2, yPos - (enemySize/2) - 25, (int) enemySize * ((float) health/ (float) maxHealth), 10);
+    rectMode(CENTER);
   }
   
   double checkDistanceToGoal(int goalX, int goalY){
