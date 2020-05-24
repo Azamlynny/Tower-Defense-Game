@@ -8,12 +8,13 @@ class GameTracker {
   long timeStart;
   long time;
   WaveTracker WTracker = new WaveTracker();
+  ProjectileTracker PTracker = new ProjectileTracker();
   
   public GameTracker() {
     money = 500;
     hearts = 50;
     
-    
+    // Record the initial time when the game begins for wave spawning
     timeStart = System.currentTimeMillis();
   }
   
@@ -23,6 +24,7 @@ class GameTracker {
     
     WTracker.checkWaveSpawn(this, Map); // Constantly checks to see if a new wave should be spawned
     WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over time
+    PTracker.runProjectileActions(this);
     
     for(int i = 0; i < enemyList.size(); i++){
       enemyList.get(i).move(Map, this); 
