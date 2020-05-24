@@ -7,8 +7,9 @@ class Enemy {
   int yPos;
   int enemySize;
   int goal;
+  int moneyDropped; // How much money the enemy drops upon being killed
   
-  public Enemy(int hp, int spd, int arm, int dmg, int enemyWidth, Map Map) {
+  public Enemy(int hp, int spd, int arm, int dmg, int enemyWidth, int moneyDrop, Map Map) {
     health = hp;
     speed = spd;
     armor = arm;
@@ -17,6 +18,7 @@ class Enemy {
     yPos = Map.pathTiles[0][1] * Map.tileWidth + Map.tileWidth/2;
     enemySize = enemyWidth;
     goal = 1;
+    moneyDropped = moneyDrop;
   }
   
   void move(Map Map, GameTracker Game){
