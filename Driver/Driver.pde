@@ -3,7 +3,7 @@ import java.io.*; // for Calendar
 
 Map Map = new Map();
 MouseManager MManage = new MouseManager();
-GameTracker Game = new GameTracker();
+GameTracker Game = new GameTracker(Map);
 GUI gui = new GUI();
 
 void setup(){

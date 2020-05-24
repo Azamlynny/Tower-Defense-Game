@@ -28,6 +28,7 @@ class Enemy {
       if(goal == Map.endOfPath - 1){ // Check if the enemy is at the end of the path
         // deal damage to the player's hearts and remove the enemy
         Game.hearts -= damage;
+        this.health = 0;
         Game.enemyList.remove(this);
       }
       else{

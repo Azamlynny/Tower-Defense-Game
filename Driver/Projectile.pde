@@ -5,7 +5,7 @@ class Projectile {
   float yVel; // y velocity
   int projectileWidth;
   int damage; // Damage the projcetile inflicts on the enemy
-  int collisionTolerance = 100;
+  int collisionTolerance; // 40 distance tolerance
   
   public Projectile(float xPosition, float yPosition, float xVelocity, float yVelocity, int dmg, int projWidth) {
     xPos = xPosition;
@@ -14,6 +14,7 @@ class Projectile {
     yVel = yVelocity;
     damage = dmg;
     projectileWidth = projWidth;
+    collisionTolerance = (int) Math.pow(projWidth,2) + 600;
   }
   
   void drawProjectile(){
