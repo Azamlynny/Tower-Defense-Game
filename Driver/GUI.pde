@@ -20,6 +20,13 @@ class GUI {
     // Draw hearts
     fill(255, 50, 50);
     text("Hearts: " + Game.hearts, 100, 1050);
+    
+    // Draw Tower backplates
+    fill(212);
+    rect(900, 960, 100, 100);
+    rect(1150, 960, 100, 100);
+    rect(1400, 960, 100, 100);
+    rect(1650, 960, 100, 100);
   }
-  
+ 
 }

@@ -19,12 +19,12 @@ class GameTracker {
     timeStart = System.currentTimeMillis();
     
     // Test tower
-    TTracker.towerList.add(new Tower(4, 5, 500, 3000, 1, 100, 40, 30, 10, Map));
+    TTracker.towerList.add(new Tower(4, 5, 500, 3000, 1, 100, 40, 30, 50, Map));
+    TTracker.towerList.add(new Tower(12, 4, 500, 3000, 1, 100, 40, 30, 50, Map));
   }
   
   void gameTick(Map Map){ // Iterates the game and all of its elements every frame
-    long timeEnd = System.currentTimeMillis();
-    time = TimeUnit.MILLISECONDS.toSeconds(timeEnd - timeStart); // Update the game's time counter in seconds
+    updateGameTime();
     
     WTracker.checkWaveSpawn(this, Map); // Constantly checks to see if a new wave should be spawned
     WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over time
@@ -32,6 +32,11 @@ class GameTracker {
     PTracker.runProjectileActions(this);
     ETracker.runEnemyActions(this, Map);
     
+  }
+  
+  void updateGameTime(){
+    long timeEnd = System.currentTimeMillis();
+    time = TimeUnit.MILLISECONDS.toSeconds(timeEnd - timeStart); // Update the game's time counter in seconds
   }
   
 }
