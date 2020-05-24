@@ -38,7 +38,6 @@ class GUI {
     if(Game.WTracker.wave > 0){
       int waveDuration = Game.WTracker.waveTimes[Game.WTracker.wave] - Game.WTracker.waveTimes[Game.WTracker.wave - 1]; // Time between the two waves
       int timeUntilNextWave = Game.WTracker.waveTimes[Game.WTracker.wave] - (int) Game.time; // Difference between next wave and current time
-      System.out.println(timeUntilNextWave/waveDuration);
       fill(255, 56, 56);
       rectMode(CORNER);
       noStroke();

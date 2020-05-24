@@ -1,5 +1,6 @@
 class Tower {
 
+  String type; // basic, burst, sniper, slow
   int projectileSpeed;
   int projectileSize;
   int range;
@@ -19,14 +20,17 @@ class Tower {
     yCoord = yCoordinate;
     xPos = xCoordinate * Map.tileWidth + Map.tileWidth/2;
     yPos = yCoordinate * Map.tileWidth + Map.tileWidth/2;
+    
+    
     towerWidth = towerSize;
     range = towerRange;
     cooldown = towerCooldown;    
-    timeSinceLastFired = System.currentTimeMillis();  
     projectileSize = towerProjectileSize;
     projectileSpeed = towerProjectileSpeed;
     damage = towerDamage;
     cost = towerCost;
+    
+    timeSinceLastFired = System.currentTimeMillis();  
   }
   
   void drawTower(){

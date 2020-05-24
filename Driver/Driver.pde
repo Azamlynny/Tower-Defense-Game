@@ -23,6 +23,6 @@ void draw(){
 
 void mousePressed(){
     if(mouseButton == 37){ // Left click
-        MManage.leftClick(Map);
+        MManage.leftClick(Map, Game);
     }
 }
