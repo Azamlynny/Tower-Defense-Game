@@ -18,7 +18,7 @@ void setup(){
 void draw(){
   Map.drawMap();
   Game.gameTick(Map);
-  gui.drawGUI(Game);
+  gui.drawGUI(Game, MManage);
 }
 
 void mousePressed(){

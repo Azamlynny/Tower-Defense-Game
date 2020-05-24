@@ -6,7 +6,7 @@ class GUI {
 
   }
   
-  void drawGUI(GameTracker Game){
+  void drawGUI(GameTracker Game, MouseManager MManager){
     textSize(32);
     
     // Draw GUI Box background
@@ -142,6 +142,27 @@ class GUI {
     text("DAMAGE: SLOW", 1710, 935);
     text("RANGE:      600", 1710, 960);
     text("SPEED:          5s", 1710, 985);
+    
+    // draw tower selection
+    if(MManager.draggingTower){
+      int radius = 0;
+      if(MManager.towerSelected == "basic"){
+        radius = 500;  
+      }
+      else if(MManager.towerSelected == "burst"){
+        radius = 300;  
+      }
+      else if(MManager.towerSelected == "sniper"){
+        radius = 1000;  
+      }
+      else if(MManager.towerSelected == "slow"){
+        radius = 600;  
+      }
+      strokeWeight(0);
+      stroke(0);
+      noFill();
+      ellipse(mouseX, mouseY, radius, radius);
+    }
      
   }
  
