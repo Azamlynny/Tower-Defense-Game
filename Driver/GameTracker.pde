@@ -17,10 +17,6 @@ class GameTracker {
     
     // Record the initial time when the game begins for wave spawning
     timeStart = System.currentTimeMillis();
-    
-    // Test tower
-    TTracker.towerList.add(new Tower(4, 5, 500, 3000, 1, 100, 40, 30, 50, Map));
-    TTracker.towerList.add(new Tower(12, 4, 500, 3000, 1, 100, 40, 30, 50, Map));
   }
   
   void gameTick(Map Map){ // Iterates the game and all of its elements every frame

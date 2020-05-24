@@ -15,20 +15,50 @@ class Tower {
   long timeSinceLastFired;
   Enemy Target;
   
-  public Tower(int xCoordinate, int yCoordinate, int towerRange, int towerCooldown, int towerDamage, int towerCost, int towerSize, int towerProjectileSize, int towerProjectileSpeed, Map Map){
+  public Tower(int xCoordinate, int yCoordinate, String towerType, Map Map){
     xCoord = xCoordinate;
     yCoord = yCoordinate;
     xPos = xCoordinate * Map.tileWidth + Map.tileWidth/2;
     yPos = yCoordinate * Map.tileWidth + Map.tileWidth/2;
     
+    type = towerType;
     
-    towerWidth = towerSize;
-    range = towerRange;
-    cooldown = towerCooldown;    
-    projectileSize = towerProjectileSize;
-    projectileSpeed = towerProjectileSpeed;
-    damage = towerDamage;
-    cost = towerCost;
+    if(type.equals("basic")){
+      towerWidth = 60;
+      range = 500;
+      cooldown = 3000;    
+      projectileSize = 25;
+      projectileSpeed = 15;
+      damage = 3;
+      cost = 250;
+    }
+    else if(type.equals("burst")){
+      towerWidth = 40;
+      range = 300;
+      cooldown = 500;    
+      projectileSize = 10;
+      projectileSpeed = 20;
+      damage = 1;
+      cost = 300;
+    }
+    else if(type.equals("sniper")){
+      towerWidth = 45;
+      range = 1000;
+      cooldown = 5000;    
+      projectileSize = 20;
+      projectileSpeed = 45;
+      damage = 10;
+      cost = 400;
+    }
+    else if(type.equals("slow")){
+      towerWidth = 50;
+      range = 600;
+      cooldown = 5000;    
+      projectileSize = 35;
+      projectileSpeed = 20;
+      damage = 0;
+      cost = 800;
+    }
     
     timeSinceLastFired = System.currentTimeMillis();  
   }
