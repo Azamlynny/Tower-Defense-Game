@@ -15,10 +15,8 @@ class Enemy {
     type = enemyType;
     if(type.equals("basic")){
       health = 4;
-      //speed = 25;
-      //damage = 2;
-      speed = 100;
-      damage = 50;
+      speed = 25;
+      damage = 2;
       enemySize = 40;
       moneyDropped = 10; 
     }

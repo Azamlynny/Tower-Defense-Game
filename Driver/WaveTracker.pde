@@ -5,7 +5,7 @@ class WaveTracker {
   long timeSinceLastSpawn; 
   int spacing; // Spacing between enemy spawns
   List<Enemy> enemyQueue = new ArrayList<Enemy>();
-  int[] waveTimes = {5, 30, 55, 85, 125, 150, 195, 220, 265, 310};
+  int[] waveTimes = {5, 30, 55, 85, 125, 150, 195, 220, 265, 310, 340};
   
   public WaveTracker(){
     wave = 0;
@@ -80,7 +80,8 @@ class WaveTracker {
         // Pop the first enemy off the enemy queue
         enemyQueue.remove(0);
         if(enemyQueue.size() == 0){
-          spawning = false;  
+          spawning = false; 
+          enemyQueue.clear();
         }
       }
     }
@@ -125,7 +126,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave3(Map map){
+  void spawnWave3(Map Map){
     spacing = 500;
     for(int i = 0; i < 5; i++){
       spawnBasic(Map); 
@@ -140,7 +141,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave4(Map map){
+  void spawnWave4(Map Map){
     spacing = 2000;
     for(int i = 0; i < 5; i++){
       spawnTank(Map);
@@ -154,7 +155,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave5(Map map){
+  void spawnWave5(Map Map){
     spacing = 500;
     for(int i = 0; i < 5; i++){
       spawnBasic(Map); 
@@ -177,7 +178,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave6(Map map){
+  void spawnWave6(Map Map){
     spacing = 200;
     for(int i = 0; i < 5; i++){
       for(int o = 0; o < 10; o++){
@@ -188,7 +189,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave7(Map map){
+  void spawnWave7(Map Map){
     spacing = 1000;
     spawnBoss(Map);
     for(int i = 0; i < 10; i ++){
@@ -197,7 +198,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave8(Map map){
+  void spawnWave8(Map Map){
     spacing = 1000;
     for(int i = 0; i < 10; i++){
       for(int o = 0; o < 3; i++){
@@ -209,7 +210,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave9(Map map){
+  void spawnWave9(Map Map){
     spacing = 500;
     spawnTank(Map);
     spawnBoss(Map);
@@ -224,7 +225,7 @@ class WaveTracker {
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
-  void spawnWave10(Map map){
+  void spawnWave10(Map Map){
     spacing = 1000;
     for(int i = 0; i < 3; i++){
       spawnTank(Map); 
