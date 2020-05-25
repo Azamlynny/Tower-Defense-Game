@@ -42,8 +42,8 @@ class GameTracker {
   void checkLoss(){
     if(hearts <= 0){
       fill(0);
-      textMode(CENTER);
-      textSize(80);
+      textAlign(CENTER);
+      textSize(200);
       text("You Lost!", 1960/2, 1080/2);
     }
   }
@@ -51,8 +51,8 @@ class GameTracker {
   void checkVictory(){
     if(WTracker.wave == 10 && ETracker.enemyList.size() == 0 && WTracker.spawning == false){
       fill(0);
-      textMode(CENTER);
-      textSize(80);
+      textAlign(CENTER);
+      textSize(200);
       text("You Won!", 1960/2, 1080/2);
     }
   }
