@@ -29,7 +29,7 @@ class GUI {
     fill(255);
     textSize(38);
     textAlign(CENTER);
-    text("Next Wave", 610, 930);
+    text("Wave " + Game.WTracker.wave, 610, 930);
 
     // Draw progress bar to next wave
     fill(212);

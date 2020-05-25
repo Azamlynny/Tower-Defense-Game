@@ -14,7 +14,6 @@ class WaveTracker {
   
   void checkWaveSpawn(GameTracker Game, Map Map){
     if(spawning == false){
-      
       for(int i = 0; i < 10; i++){
         if(Game.time == waveTimes[i]){ // Check if a new wave should begin
           beginNewWave(Game, Map); 
@@ -79,8 +78,27 @@ class WaveTracker {
         Game.ETracker.enemyList.add(enemyQueue.get(0));
         // Pop the first enemy off the enemy queue
         enemyQueue.remove(0);
+        if(enemyQueue.size() == 0){
+          spawning = false;  
+        }
       }
     }
+  }
+  
+  void spawnBasic(Map Map){
+    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
+  }
+  
+  void spawnQuick(Map Map){
+    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
+  }
+  
+  void spawnTank(Map Map){
+    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
+  }
+  
+  void spawnBoss(Map Map){
+    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)

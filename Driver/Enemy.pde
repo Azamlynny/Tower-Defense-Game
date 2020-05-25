@@ -1,4 +1,6 @@
 class Enemy {
+  
+  String type; // enemy type: can be basic, quick, tank, boss
   int health;
   int maxHealth;
   int speed;
