@@ -26,6 +26,7 @@ class WaveTracker {
   void beginNewWave(GameTracker Game, Map Map){
      System.out.println("Spawning a new wave");
      wave++;
+     Game.money += 200; // give the player a free $200 each wave
      spawning = true;
      timeSinceLastSpawn = System.currentTimeMillis();
      spawnWave(Game, Map);
@@ -86,27 +87,28 @@ class WaveTracker {
   }
   
   void spawnBasic(Map Map){
-    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
+    enemyQueue.add(new Enemy("basic", Map));
   }
   
   void spawnQuick(Map Map){
-    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
+    enemyQueue.add(new Enemy("quick", Map));
   }
   
   void spawnTank(Map Map){
-    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
+    enemyQueue.add(new Enemy("tank", Map));
   }
   
   void spawnBoss(Map Map){
-    enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
+    enemyQueue.add(new Enemy("boss", Map));
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
   void spawnWave1(GameTracker Game, Map Map){
     spacing = 1000;
-    for(int i = 0; i < 10; i++){
-      enemyQueue.add(new Enemy(1, 50, 0, 1, 50, 10, Map));
-    }
+    spawnBoss(Map);
+    spawnQuick(Map);
+    spawnTank(Map);
+    spawnBasic(Map);
   }
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)

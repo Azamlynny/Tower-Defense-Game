@@ -4,7 +4,6 @@ class Enemy {
   int health;
   int maxHealth;
   int speed;
-  int armor;
   int damage;
   int xPos;
   int yPos;
@@ -12,17 +11,41 @@ class Enemy {
   int goal;
   int moneyDropped; // How much money the enemy drops upon being killed
   
-  public Enemy(int hp, int spd, int arm, int dmg, int enemyWidth, int moneyDrop, Map Map) {
-    health = hp;
-    maxHealth = hp;
-    speed = spd;
-    armor = arm;
-    damage = dmg;
+  public Enemy(String enemyType, Map Map) {
+    type = enemyType;
+    if(type.equals("basic")){
+      health = 4;
+      speed = 25;
+      damage = 2;
+      enemySize = 40;
+      moneyDropped = 10; 
+    }
+    else if(type.equals("quick")){
+      health = 2;
+      speed = 45;
+      damage = 1;
+      enemySize = 30;
+      moneyDropped = 20; 
+    }
+    else if(type.equals("tank")){
+      health = 15;
+      speed = 15;
+      damage = 5;
+      enemySize = 50;
+      moneyDropped = 50; 
+    }
+    else if(type.equals("boss")){
+      health = 200;
+      speed = 10;
+      damage = 40;
+      enemySize = 70;
+      moneyDropped = 500; 
+    }
+
+    maxHealth = health;
+    goal = 1;
     xPos = Map.pathTiles[0][0] * Map.tileWidth + Map.tileWidth/2;
     yPos = Map.pathTiles[0][1] * Map.tileWidth + Map.tileWidth/2;
-    enemySize = enemyWidth;
-    goal = 1;
-    moneyDropped = moneyDrop;
   }
   
   void move(Map Map, GameTracker Game){
@@ -57,8 +80,24 @@ class Enemy {
   }
   
   void drawEnemy(){
-    fill(0);
-    rect(xPos, yPos, enemySize, enemySize); 
+    
+    if(type.equals("basic")){
+      fill(122, 255, 142);
+      rect(xPos, yPos, enemySize, enemySize); 
+    }
+    else if(type.equals("quick")){
+      fill(242, 224, 61);
+      rect(xPos, yPos, enemySize, enemySize); 
+    }
+    else if(type.equals("tank")){
+      fill(8, 3, 153);
+      rect(xPos, yPos, enemySize, enemySize); 
+    }
+    else if(type.equals("boss")){
+      fill(255, 0, 0);
+      rect(xPos, yPos, enemySize, enemySize); 
+    }
+    
     drawHealthBar();
   }
   
