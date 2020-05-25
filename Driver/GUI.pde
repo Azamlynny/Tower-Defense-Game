@@ -157,21 +157,29 @@ class GUI {
         strokeWeight(3);
         stroke(145, 176, 250);
         rect(mouseX, mouseY, towerWidth - 10, towerWidth - 10);
-      } else if (MManager.towerSelected == "burst") {
+      } 
+      else if (MManager.towerSelected == "burst") {
         towerWidth = 40;
         radius = 300;
         fill(167, 36, 179);
         noStroke();
         rect(mouseX, mouseY, towerWidth, towerWidth);
-      } else if (MManager.towerSelected == "sniper") {
+      } 
+      else if (MManager.towerSelected == "sniper") {
         towerWidth = 30;
         radius = 1000;
         fill(2, 110, 22);
         strokeWeight(3);
         stroke(24, 61, 26);
         triangle(mouseX, mouseY - towerWidth + 10, mouseX - 0.866 * towerWidth, mouseY + towerWidth / 2 + 10, mouseX + 0.866 * towerWidth, mouseY + towerWidth / 2 + 10);
-      } else if (MManager.towerSelected == "slow") {
+      } 
+      else if (MManager.towerSelected == "slow") {
+        towerWidth = 50;
         radius = 600;
+        fill(104, 228, 237);
+        stroke(109, 188, 194);
+        strokeWeight(3);
+        ellipse(mouseX, mouseY, towerWidth, towerWidth);
       }
       strokeWeight(1);
       stroke(100);
