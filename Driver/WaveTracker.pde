@@ -5,7 +5,7 @@ class WaveTracker {
   long timeSinceLastSpawn; 
   int spacing; // Spacing between enemy spawns
   List<Enemy> enemyQueue = new ArrayList<Enemy>();
-  int[] waveTimes = {5, 30, 55, 85, 125, 150, 195, 220, 265, 300, 330};
+  int[] waveTimes = {5, 30, 50, 75, 110, 130, 165, 205, 240, 265, 300};
   
   public WaveTracker(){
     wave = 0;
@@ -142,7 +142,7 @@ class WaveTracker {
   
   // Enemy(int hp, int spd, int arm, int dmg, int xPosition, int yPosition, int enemyWidth)
   void spawnWave4(Map Map){
-    spacing = 2000;
+    spacing = 800;
     for(int i = 0; i < 5; i++){
       spawnTank(Map);
     }

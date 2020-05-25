@@ -34,7 +34,7 @@ class GUI {
     // Draw progress bar to next wave
     fill(212);
     rect(610, 1000, 300, 100);
-    if (Game.WTracker.wave > 0) {
+    if (Game.WTracker.wave > 0 && Game.WTracker.wave < 10) {
       int waveDuration = Game.WTracker.waveTimes[Game.WTracker.wave] - Game.WTracker.waveTimes[Game.WTracker.wave - 1]; // Time between the two waves
       int timeUntilNextWave = Game.WTracker.waveTimes[Game.WTracker.wave] - (int) Game.time; // Difference between next wave and current time
       fill(255, 56, 56);

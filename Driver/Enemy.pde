@@ -14,7 +14,7 @@ class Enemy {
   public Enemy(String enemyType, Map Map) {
     type = enemyType;
     if(type.equals("basic")){
-      health = 4;
+      health = 5;
       speed = 25;
       damage = 2;
       enemySize = 40;
@@ -28,14 +28,14 @@ class Enemy {
       moneyDropped = 20; 
     }
     else if(type.equals("tank")){
-      health = 15;
+      health = 20;
       speed = 15;
       damage = 5;
       enemySize = 50;
       moneyDropped = 50; 
     }
     else if(type.equals("boss")){
-      health = 200;
+      health = 350;
       speed = 10;
       damage = 40;
       enemySize = 70;
