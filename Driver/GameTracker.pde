@@ -22,17 +22,39 @@ class GameTracker {
   void gameTick(Map Map){ // Iterates the game and all of its elements every frame
     updateGameTime();
     
-    WTracker.checkWaveSpawn(this, Map); // Constantly checks to see if a new wave should be spawned
+    if(WTracker.wave < 10){
+      WTracker.checkWaveSpawn(this, Map); // Constantly checks to see if a new wave should be spawned
+    }
     WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over time
     TTracker.runTowerActions(this);
     PTracker.runProjectileActions(this);
     ETracker.runEnemyActions(this, Map);
     
+    checkLoss();
+    checkVictory();
   }
   
   void updateGameTime(){
     long timeEnd = System.currentTimeMillis();
     time = TimeUnit.MILLISECONDS.toSeconds(timeEnd - timeStart); // Update the game's time counter in seconds
+  }
+  
+  void checkLoss(){
+    if(hearts <= 0){
+      fill(0);
+      textMode(CENTER);
+      textSize(80);
+      text("You Lost!", 1960/2, 1080/2);
+    }
+  }
+  
+  void checkVictory(){
+    if(WTracker.wave == 10 && ETracker.enemyList.size() == 0 && WTracker.spawning == false){
+      fill(0);
+      textMode(CENTER);
+      textSize(80);
+      text("You Won!", 1960/2, 1080/2);
+    }
   }
   
 }
