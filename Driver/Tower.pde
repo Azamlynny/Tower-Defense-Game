@@ -93,7 +93,7 @@ class Tower {
     stroke(100);
     strokeWeight(1);
     noFill();
-    ellipse(xPos, yPos, range, range);
+    //ellipse(xPos, yPos, range, range);
   }
   
   void checkCooldown(GameTracker Game){
