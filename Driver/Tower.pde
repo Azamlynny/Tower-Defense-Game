@@ -132,7 +132,6 @@ class Tower {
         }
       }
     }
-    
   }
   
   double checkDistance(int targetX, int targetY){

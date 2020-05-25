@@ -7,11 +7,6 @@ class MouseManager {
     draggingTower = false;
   }
   
-    //rect(900, 960, 100, 100);
-    //rect(1150, 960, 100, 100);
-    //rect(1400, 960, 100, 100);
-    //rect(1650, 960, 100, 100);
-  
   void leftClick(Map Map, GameTracker Game){
     if(draggingTower == false){
       if(mouseX >= 850 && mouseX <= 950 && mouseY >= 910 && mouseY <= 1010 && Game.money >= 250){ // basic

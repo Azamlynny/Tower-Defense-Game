@@ -20,12 +20,11 @@ class GameTracker {
   }
   
   void gameTick(Map Map){ // Iterates the game and all of its elements every frame
-    updateGameTime();
+    updateGameTime(); // Used for timing for wave spawning
     
-    if(WTracker.wave < 10){
-      WTracker.checkWaveSpawn(this, Map); // Constantly checks to see if a new wave should be spawned
-    }
-    WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over time
+    WTracker.checkWaveSpawn(this, Map); // Constantly checks to see if a new wave should be spawned
+    WTracker.dequeueSpawnWave(this); // Spawns a wave of enemies over a period of time
+    
     TTracker.runTowerActions(this);
     PTracker.runProjectileActions(this);
     ETracker.runEnemyActions(this, Map);
@@ -49,7 +48,7 @@ class GameTracker {
   }
   
   void checkVictory(){
-    if(WTracker.wave == 10 && ETracker.enemyList.size() == 0 && WTracker.spawning == false){
+    if(WTracker.wave == 10 && ETracker.enemyList.size() == 0 && WTracker.spawning == false && hearts > 0){
       fill(0);
       textAlign(CENTER);
       textSize(200);
