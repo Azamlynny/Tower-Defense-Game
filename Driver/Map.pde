@@ -25,8 +25,8 @@ class Map {
   
   void drawGrid(){ // Draws a grid to show tile on the map
     background(156, 135, 75); // light brown
-    strokeWeight(0); 
-    stroke(50); 
+    strokeWeight(1); 
+    stroke(69, 46, 41, 50); 
     for(int i = 0; i < xTiles; i++){
       line(i * tileWidth, 0, i * tileWidth, mapHeight);
     }

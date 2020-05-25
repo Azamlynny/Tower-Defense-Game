@@ -12,7 +12,7 @@ class GameTracker {
   EnemyTracker ETracker = new EnemyTracker();
   
   public GameTracker(Map Map) {
-    money = 500;
+    money = 15000;
     hearts = 50;
     
     // Record the initial time when the game begins for wave spawning

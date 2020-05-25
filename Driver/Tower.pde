@@ -53,10 +53,10 @@ class Tower {
     else if(type.equals("slow")){
       towerWidth = 50;
       range = 600;
-      cooldown = 5000;    
-      projectileSize = 35;
-      projectileSpeed = 20;
-      damage = 0;
+      cooldown = 8000;    
+      projectileSize = 40;
+      projectileSpeed = 10;
+      damage = 15;
       cost = 800;
     }
     
@@ -90,8 +90,8 @@ class Tower {
       ellipse(xPos,yPos, towerWidth, towerWidth);
     }
     
-    stroke(0);
-    strokeWeight(0);
+    stroke(100);
+    strokeWeight(1);
     noFill();
     ellipse(xPos, yPos, range, range);
   }
