@@ -146,17 +146,41 @@ class GUI {
     // draw tower selection
     if(MManager.draggingTower){
       int radius = 0;
+      int towerWidth;
       if(MManager.towerSelected == "basic"){
+        towerWidth = 60;
         radius = 500;  
+        fill(16, 70, 196);
+        stroke(0);
+        strokeWeight(1);
+        rect(mouseX, mouseY, towerWidth, towerWidth);
+        noFill();
+        strokeWeight(3);
+        stroke(145, 176, 250);
+        rect(mouseX, mouseY, towerWidth - 10, towerWidth - 10);
       }
       else if(MManager.towerSelected == "burst"){
-        radius = 300;  
+        towerWidth = 40;
+        radius = 300;
+        fill(167, 36, 179);
+        noStroke();
+        rect(mouseX, mouseY, towerWidth, towerWidth);
       }
       else if(MManager.towerSelected == "sniper"){
-        radius = 1000;  
+        towerWidth = 30;
+        radius = 1000;
+        fill(2, 110, 22);
+        strokeWeight(3);
+        stroke(24, 61, 26);
+        triangle(mouseX, mouseY - towerWidth + 10, mouseX - 0.866 * towerWidth, mouseY + towerWidth / 2 + 10, mouseX + 0.866 * towerWidth, mouseY + towerWidth / 2 + 10);
       }
       else if(MManager.towerSelected == "slow"){
+        towerWidth = 50;
         radius = 600;  
+        fill(104, 228, 237);
+        stroke(109, 188, 194);
+        strokeWeight(3);
+        ellipse(mouseX, mouseY, towerWidth, towerWidth);
       }
       strokeWeight(0);
       stroke(0);

@@ -42,7 +42,7 @@ class Tower {
       cost = 300;
     }
     else if(type.equals("sniper")){
-      towerWidth = 45;
+      towerWidth = 30;
       range = 1000;
       cooldown = 5000;    
       projectileSize = 20;
@@ -64,8 +64,32 @@ class Tower {
   }
   
   void drawTower(){
-    fill(0,240,0);
-    rect(xPos, yPos, towerWidth, towerWidth);
+    if(type.equals("basic")){
+      fill(16, 70, 196);
+      rect(xPos, yPos, towerWidth, towerWidth);
+      noFill();
+      strokeWeight(3);
+      stroke(145, 176, 250);
+      rect(xPos, yPos, towerWidth - 10, towerWidth - 10);
+    }
+    else if(type.equals("burst")){
+      fill(167, 36, 179);
+      noStroke();
+      rect(xPos, yPos, towerWidth, towerWidth);
+    }
+    else if(type.equals("sniper")){
+      fill(2, 110, 22);
+      strokeWeight(3);
+      stroke(24, 61, 26);
+      triangle(xPos, yPos - towerWidth + 10, xPos - 0.866 * towerWidth, yPos + towerWidth / 2 + 10, xPos + 0.866 * towerWidth, yPos + towerWidth / 2 + 10);
+    }
+    else if(type.equals("slow")){
+      fill(104, 228, 237);
+      stroke(109, 188, 194);
+      strokeWeight(3);
+      ellipse(xPos,yPos, towerWidth, towerWidth);
+    }
+    
     stroke(0);
     strokeWeight(0);
     noFill();
