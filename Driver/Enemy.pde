@@ -1,3 +1,5 @@
+// Enemy
+
 class Enemy {
   
   String type; // enemy type: can be basic, quick, tank, boss

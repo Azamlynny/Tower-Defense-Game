@@ -1,3 +1,5 @@
+// Projectile
+
 class Projectile {
   float xPos;
   float yPos;

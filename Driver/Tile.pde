@@ -1,3 +1,5 @@
+// Tile
+
 class Tile {
 
   int xPos;

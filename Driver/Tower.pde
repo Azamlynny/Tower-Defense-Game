@@ -1,3 +1,5 @@
+// Tower
+
 class Tower {
 
   String type; // basic, burst, sniper, slow

@@ -1,3 +1,5 @@
+// WaveTracker
+
 class WaveTracker {
   
   int wave;

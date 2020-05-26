@@ -1,3 +1,5 @@
+// Map
+
 class Map {
 
   int mapWidth = 1960; // Screen resolution width
